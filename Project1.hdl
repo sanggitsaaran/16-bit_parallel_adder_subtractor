@@ -1,0 +1,12 @@
+CHIP Project1 {
+    IN a[16],b[16];
+    OUT sum[16],difference[16];
+ 
+    PARTS:
+    Add16(a=a,b=b,out=sum);
+    Not16(in=b,out=nb);
+    Add16(a=a,b=nb,out=ndifference);
+    Or16(a[0]=false,b[0]=true,out=t);
+    Add16(a=ndifference,b=t,out=difference);
+    
+}
